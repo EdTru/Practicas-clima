@@ -43,12 +43,9 @@ plt.title("Anomalia de Temperatura a 2 m (°C) – ERA5 – Enero 2026") #Títul
 ax.coastlines(resolution="110m") #Añadimos las líneas de costa
 ax.gridlines(draw_labels=True, dms=True, x_inline=False, y_inline=False) #Adición de los meridianos y latitudes.
 
-
-plt.colorbar(extend='both') #Creamos la barra que
+cbar = plt.colorbar(orientation="horizontal", pad=0.05, shrink=0.8) #Creamos la barra que
 #indica la escala de color con la temperatura, pad indica la separación al mapa y shrink el tamaño.
 cbar.set_label("Temperatura a 2 m (°C)") #Texto que acompaña a la barra
 cbar.ax.tick_params(labelsize=8) #Modifica el tamaño de los múmeros en la barra de color
-
-
 plt.show() #Mostramos la figura
 
