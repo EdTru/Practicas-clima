@@ -4,7 +4,6 @@ import matplotlib
 import matplotlib.pyplot as plt #Módulo para representar datos en gráficas
 import cartopy.crs as ccrs #Módulo para el formato de mapa global
 
-
 datillos = Dataset("Data_P3.nc", "r", format="NETCDF4") #Leemos los datos del archivo de de ERA5
 
 temp, lon, lat = datillos.variables["t2m"], datillos.variables["longitude"][:], datillos.variables["latitude"][:]
