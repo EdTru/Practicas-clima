@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper,chapterprefix=true,headings=twolinechapter]{report}
+\input{formato/datos}
+\input{formato/preambulo}
+\input{formato/portadas}
+
+\usepackage{ amssymb }
+\usepackage{ dsfont }
+\usepackage{ gensymb }
+
+
+
+\bibliography{bib/refs}
+
+\begin{document}
+\input{formato/misdefiniciones.tex}
+
+%Poner bien las portadas
+\portadaA
+
+%incluir indices
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+
+%cuerpo del trabajo
+\section{Introducción}
+El concepto de histéresis en sistemas físicos se refiere a la propiedad de algunos 
+sistemas de exhibir un comportamiento dependiente de su historia pasada. 
+\contraportadaA
+
+\end{document}
