@@ -1,32 +1,169 @@
-\documentclass[12pt,a4paper,chapterprefix=true,headings=twolinechapter]{report}
-\input{formato/datos}
-\input{formato/preambulo}
-\input{formato/portadas}
+\documentclass[12pt,a4paper,chapterprefix=false,headings=twolinechapter]{scrreprt}
 
-\usepackage{ amssymb }
-\usepackage{ dsfont }
-\usepackage{ gensymb }
+% =========================================================================
+% PREÁMBULO (Integrado de preambulo.tex y main.tex)
+% =========================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[%
+  paperwidth=210mm,%
+  paperheight=297mm,%
+  left=30mm,right=25mm,%
+  top=30mm, bottom=25mm,%
+  marginparwidth=1cm, marginparsep=1cm]{geometry}
 
+\usepackage{amsmath, amssymb, amsfonts, amsthm, dsfont}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{wrapfig}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+\usepackage{fancyhdr}
+\usepackage[thinlines]{easytable}
+\usepackage{pgfpages}
+\usepackage{lscape}
+\usepackage{relsize,exscale}
+\usepackage{titling}
+\usepackage{textpos}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{csquotes}
+\usepackage{scrhack}
 
+% =========================================================================
+% DATOS DEL DOCUMENTO (De datos.tex)
+% =========================================================================
+\def\mytitle{La histéresis de las capas de hielo}
+\def\authorA{Juan Sanz}
+\def\authorB{Eduardo Truchado}
+\def\authorC{Pablo Rodríguez}
+\def\myauthors{\authorA, \authorB \and \authorC}
+\def\mydate{\today}
 
-\bibliography{bib/refs}
+\title{\mytitle}
+\author{\myauthors}
+\date{\mydate}
 
+% =========================================================================
+% DEFINICIONES Y MACROS (De misdefiniciones.tex y preambulo.tex)
+% =========================================================================
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\listtablename}{Índice de tablas}
+
+% Configuración de Matlab (Corregida)
+\definecolor{mygreen}{RGB}{28,172,0}
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle={\tiny \color{black}},
+    numbersep=9pt,
+    emph=[1]{for,end,break}, emphstyle=[1]\color{red}
+}
+
+% Atajos de letras griegas y mates
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\e}{\varepsilon}
+
+% =========================================================================
+% ESTILO DE PÁGINA (Numeración derecha abajo)
+% =========================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\thepage}
+
+% Para que las páginas de inicio de capítulo también tengan el número a la derecha
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% =========================================================================
+% PORTADAS (De portadas.tex - Modificada para compilar sin imágenes)
+% =========================================================================
+\newcommand{\portadaA}{
+    \thispagestyle{empty}
+    \newgeometry{left=3cm,right=3cm}
+    \noindent
+    %\includegraphics[height = 2cm]{img/logoFCTo.png} % Comentado para evitar error
+    \rule{0pt}{2cm} % Espacio equivalente al logo
+
+    \vspace{4cm}
+
+    \begin{tcolorbox}[boxrule=0pt,frame hidden,colback=red!65]
+        \vspace{1cm}
+        \begin{center}
+            {\huge \textbf{\textcolor{white}{\thetitle}}}\\
+            \vspace{1cm}
+            {\Large \textbf{\textcolor{white}{Física del clima}}}\\
+            \vspace{1cm}
+            {\large \textbf{\textcolor{white}{\thedate}}}\\
+        \end{center}
+        \vspace{1cm}
+    \end{tcolorbox}
+
+    \vfill
+    \authorA\\
+    \authorB\\
+    \authorC\\
+    Última versión: \thedate
+ 
+    \restoregeometry
+    \newpage
+}
+
+\newcommand{\contraportadaA}{
+    \newpage
+    \thispagestyle{empty}
+    \begin{tcolorbox}[boxrule=0pt,frame hidden,colback=red!65, enhanced, height=\textheight]
+    \end{tcolorbox}
+}
+
+% =========================================================================
+% CUERPO DEL DOCUMENTO
+% =========================================================================
 \begin{document}
-\input{formato/misdefiniciones.tex}
 
-%Poner bien las portadas
 \portadaA
 
-%incluir indices
-\thispagestyle{empty}
 \tableofcontents
-
 \newpage
 
-%cuerpo del trabajo
-\section{Introducción}
+\chapter*{Introducción}
 El concepto de histéresis en sistemas físicos se refiere a la propiedad de algunos 
 sistemas de exhibir un comportamiento dependiente de su historia pasada. 
+
+En el caso de los sistemas climáticos asociados a las capas de hielo, este describe la existencia de múltiples estados estables para un mismo valor de una variable ambiental como es la temperatura.
+Esto significa que el sistema puede permanecer en un estado de hielo o en un estado sin hielo, dependiendo de su trayectoria histórica, incluso si las condiciones ambientales son idénticas.
+
+\vspace{0.5cm}
+
+En este informe se explorará el concepto de histéresis de las capas de hielo y cómo este fenómeno puede influir en la estabilidad de los sistemas climáticos a largo plazo.
+
+\chapter*{Desarrollo}
+Ejemplo de uso de las definiciones personalizadas: $\RR, \ZZ, \a, \b$.
+
 \contraportadaA
 
 \end{document}
