@@ -8,8 +8,8 @@
 \usepackage[%
   paperwidth=210mm,%
   paperheight=297mm,%
-  left=30mm,right=25mm,%
-  top=30mm, bottom=25mm,%
+  left=25mm,right=25mm,%
+  top=20mm, bottom=25mm,%
   marginparwidth=1cm, marginparsep=1cm]{geometry}
 
 \usepackage{amsmath, amssymb, amsfonts, amsthm, dsfont}
@@ -38,6 +38,8 @@
 \usepackage{parskip}
 \usepackage{csquotes}
 \usepackage{scrhack}
+\usepackage{biblatex}
+\addbibresource{refs.bib}
 
 % =========================================================================
 % DATOS DEL DOCUMENTO (De datos.tex)
@@ -104,10 +106,10 @@
 % =========================================================================
 \newcommand{\portadaA}{
     \thispagestyle{empty}
-    \newgeometry{left=3cm,right=3cm}
+    \newgeometry{left=2.5cm,right=2.5cm, top=2.5cm, bottom=2.5cm}
     \noindent
-    %\includegraphics[height = 2cm]{img/logoFCTo.png} % Comentado para evitar error
-    \rule{0pt}{2cm} % Espacio equivalente al logo
+    \includegraphics[height = 2cm]{img/logoFCTo.png} % Comentado para evitar error
+    \rule{0pt}{1cm} % Espacio equivalente al logo
 
     \vspace{4cm}
 
@@ -136,7 +138,7 @@
 \newcommand{\contraportadaA}{
     \newpage
     \thispagestyle{empty}
-    \begin{tcolorbox}[boxrule=0pt,frame hidden,colback=red!65, enhanced, height=\textheight]
+    \begin{tcolorbox}[boxrule=0pt,frame hidden,colback=red!65, enhanced, height=\textheight,text width=\textwidth / 64]
     \end{tcolorbox}
 }
 
@@ -151,18 +153,64 @@
 \newpage
 
 \chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción} % Lo añade al índice manualmente
+\stepcounter{chapter} % Indica a LaTeX que internamente ya estamos en el Cap 1
+\setcounter{section}{0}
+
+\section{Definiciones}
 El concepto de histéresis en sistemas físicos se refiere a la propiedad de algunos 
 sistemas de exhibir un comportamiento dependiente de su historia pasada. 
 
 En el caso de los sistemas climáticos asociados a las capas de hielo, este describe la existencia de múltiples estados estables para un mismo valor de una variable ambiental como es la temperatura.
 Esto significa que el sistema puede permanecer en un estado de hielo o en un estado sin hielo, dependiendo de su trayectoria histórica, incluso si las condiciones ambientales son idénticas.
 
+La relevancia princicpal de este proceso radica en su capacidad para generar puntos de cambio irreversibles, es decir puntos de inflexión climáticos,
+donde bajo pequeñas perturbaciones en el sistema, las capas de hielo pueden sufrir un proceso autoinducido de retroceso que continúa sin importar la 
+temperatura ambiental, lo que puede llevar a cambios clímaticos abruptos y catastróficos sin necesidad de un cambio bruso en la tempertaura global o incluso 
+si se frenanara la subida de las temperaturas globales.
+
+\vspace{0.5cm}
+En este informe se explorará el concepto de histéresis de las capas de hielo y cómo este fenómeno puede influir en la estabilidad de los sistemas climáticos a largo plazo. Así transformando 
+procesos lineales del hielo como el derretimiento o la formaciónd e hielo en procesos abruptos e irreversibles. 
+
+\section{Mecanismos físicos de la histéresis}
+
+La histéresis de las capas de hielo es un proceso que no se debe únicamente a un mecanismo físico, sino que es el reusltado de muchos procesos de 
+retroalimentación positivas y negativas que interactúan entre sí generando un comportamiento no lineal a largo plazo en el sistema climático helado. 
+Entre estos mecanismos los principales son: 
+
+\subsection{Retroalimentación Elevación-Balance de Masa (Height-SMB Feedback)}
+
+Este mecanismo se basa en la interacción entre la ganancia y la pérdida de masa de las grandes superficies de hielo. Tal y como se comenta en \cite{Lenaerts2019}, la ganancia de masa de las capas de hielo se 
+produce principalmente a través de la acumulación de nieve, mientras que la pérdida de masa ocurre principalmente a través del derretimiento y la sublimación. Estos procesos pueden expresarse en la siguiente ecuación
+mencionada en el citado artículo:
+
+\begin{equation}
+    BM = SMB - D
+\end{equation}
+
+Donde $BM$ es el balance de masa neto, $SMB$ es el balance de masa superficial (acumulación menos ablación) y $D$ es la pérdida de masa debido a procesos dinámicos como el flujo de hielo a través de escorrentía o la descarga de icebergs
+de gran tamaño ( mayor de 90 - 100 metros de espesor, llamada \textit{Marine Ice Cliff Instability (MICI)} , \cite{DeConto2016}). Con esta simple ecuación podemos sacar conclusiones importantes.
+
 \vspace{0.5cm}
 
-En este informe se explorará el concepto de histéresis de las capas de hielo y cómo este fenómeno puede influir en la estabilidad de los sistemas climáticos a largo plazo.
+ Analizando que el SBM depende del derretimiento, como la temperatura del aire sube cuando bajamos de altitud, normalmente con un gradiente térmico de 6.5ºC/km, pero si la capa de hielo masa (MB) negativo, pierde altitud que al llegar a un punto de mayor temperatura, se deshiela más, perdiendo 
+ aún más altitud generando menos hielo y un proceso de retroalimentación negativa.
 
-\chapter*{Desarrollo}
-Ejemplo de uso de las definiciones personalizadas: $\RR, \ZZ, \a, \b$.
+ Cuando esto ocurre también se comenta que al disminuir la altitud de las capas de hielo la \textit{Línea de equilibrio de altitud (ELA)} se desplaza hacia el interior del la superficie de hielo reduciendo el área de acumulación de hielo y convirtiendo la superficie
+ en una zona de derretimiento. 
+
+ Como resultado de esto el sistema entra en un estado de multiestabilidad donde pueden  haber zonas estables con y sin hielo para la misma temperatura dependiendo simplemenete de la historia del hielo de la zona.
+
+ \vspace{0.5cm}
+
+ Vemos pues que es mucho más fácil perder capas de hielo que formar nuevas capas una vez que el proceso ha iniciadom generando un proceso de histéresis donde el sistema a pesar de que se lleguen a temperaturas frías, 
+ debido al derrumbamiento de las capas iniciales de hielo, el sistema continuará perdiendo capas.
+
+ \subsection{}
+
+ \addcontentsline{toc}{chapter}{Bibliografía}
+\printbibliography
 
 \contraportadaA
 
