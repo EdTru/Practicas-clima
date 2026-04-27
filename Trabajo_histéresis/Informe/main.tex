@@ -152,7 +152,7 @@
 \tableofcontents
 \newpage
 
-\chapter*{Introducción}
+\chapter*{Cuerpo del informe}
 \addcontentsline{toc}{chapter}{Introducción} % Lo añade al índice manualmente
 \stepcounter{chapter} % Indica a LaTeX que internamente ya estamos en el Cap 1
 \setcounter{section}{0}
@@ -205,11 +205,82 @@ de gran tamaño ( mayor de 90 - 100 metros de espesor, llamada \textit{Marine Ic
  \vspace{0.5cm}
 
  Vemos pues que es mucho más fácil perder capas de hielo que formar nuevas capas una vez que el proceso ha iniciadom generando un proceso de histéresis donde el sistema a pesar de que se lleguen a temperaturas frías, 
- debido al derrumbamiento de las capas iniciales de hielo, el sistema continuará perdiendo capas.
+ debido al derrumbamiento de las capas iniciales de hielo, el sistema continuará perdiendo capas. Este proceso es especialmente relevante en las capas de hielo marinas, como la capa de hielo de Groenlandia, donde el 
+ proceso de retroalimentación puede ser aún más pronunciado debido a la interacción con el océano y la atmósfera circundante es de especial interés en el estudiod e la estabilidad climática global ya que se trata de uno de 
+ los fenómenos más impredecibles y potencialmente catastróficos en el contexto del cambio climático. 
 
- \subsection{}
+ \vspace{0.5cm}
 
- \addcontentsline{toc}{chapter}{Bibliografía}
+ Cabe destacar que en el estudio realizado en \cite{robinson2012multistability} se muestra que este proceso puede afectar severamente al umbral crítico de calentamiento global que generaría una desaparición completa de la capa 
+ de hielo a nivel global. Este umbral según el artículo se encurntra entre los 0.8 ºC y 3.4 ºC de calentamiento respecto a los niveles preindustriales y este proceso aquí descrito podría ser uno de los principales causantes de este calentamiento.
+
+ A continuación se deja una representación gráfica \ref{fig:height_smb_feedback} generada a través del modelo de IA \textit{ChatGPT} que resume todos los aspéctos tratados en este primer apartado:
+
+ \vspace{0.5cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/chtgptSMB.png}
+    \caption{Esquema del proceso de retroalimentación Elevación-Balance de Masa (Height-SMB Feedback) que genera histéresis en las capas de hielo.}
+    \label{fig:height_smb_feedback}
+\end{figure} 
+\newpage
+
+ \subsection{Inestabilidad de las capas de hielo marinas (Marine Ice Sheet Instability - MISI)}
+A diferencia de la capa de hielo de Groenlandia, gran parte de la Capa de Hielo de la Antártida Occidental (WAIS) se clasifica como una "capa de hielo marina",
+lo que significa que su base se encuentra por debajo del nivel del mar y está en contacto directo con el océano. Esta configuración geométrica da lugar a un 
+mecanismo de retroalimentación interna conocido como Marine Ice Sheet Instability (MISI), que es un factor determinante en la histéresis del sistema antártico.
+
+\vspace{0.5cm}
+
+Este mecanismo es muy dependiente de la geometría de las pendientes de la plataforma de hielo. El concepto fundamental que resume el funcionamiento de este fue abordado 
+en el artículo de \cite{schoof2007ice}. En este se plantea que el hielo marino interacciona con el océano fusionándose al caer flotando sobre el en un límite geográfico 
+denominado como la \textit{la línea de apoyo}, esta se define como el límite entre la cordillera del lecho marino y el agua donde el hielo se desprende y comienza a flotar
+fusionándose con el océano eventualmente. En este proceso influye muy fuértemente la topografía subyacente al sistema. 
+
+\vspace{0.5cm}
+
+Un ejemplo interesnante es gran parte de la antártida occidental donde la plataforma de hielo se encuentra en una pendiente retógrada muy acuciente respecto a la línea de apoyo, 
+es decir la profundadida del lecho marino aumenta rápidamente conforme nos adentramos en el continente, este tiene una forma de "cuenco" o "cuchara" debido al colapso de la superficie 
+continental por la erosión del hielo a lo largo de los siglos y el enorme peso de esta corteza. 
+
+\vspace{0.5cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/antartidah.png}
+    \caption{Profundidad del lecho marino y el continente de la antártica, lecho occidental hundido.}
+    \label{fig:antsrtidah}
+\end{figure}
+
+\vspace{0.5cm}
+
+Podemos ver pues en el mapa \ref{fig:antsrtidah} extraído del artículo \cite{bbcmundo2024antartida} como la parte occidental de la antártida tiene una zona 
+de pendiente retógrada donde el continente está a menor altura que el lehco marino que lo rodea. 
+
+\vspace{0.5cm}
+
+Ahora, este proceso genera una retroalimantación en el sistema, que de nuevo genera un proceso de histéresis. El sistema realiza el sisguiente proceso: 
+
+\begin{enumerate}
+    \item El océano calienta el hielo más cercano hacienco que la línea de apoyo retroceda a puntos más cercanos al interior del continente.
+    \item Al retroceder, el hielo se encurntra que el interior del continente se encuentra en una cuenca a menor profundidad y por lo tanto con un mayor espesor de hielo por encima. 
+    \item Según el artículo de \cite{schoof2007ice}, el flujo del hielo hacia el mar (\textit{q}) depende del espesor de la capa de hielo (\textit{h}) en la línea de apoyo bajo la siguiente proporción: 
+    \begin{equation}
+        q \propto h^{4.7}
+    \end{equation}
+    \item Por lo tanto, al aumentar el espesor de la capa de hielo en la línea de apoyo, el flujo de hielo hacia el mar aumenta exponencialmente, lo que a su vez hace que la línea de apoyo retroceda aún más hacia el interior del continente.
+\end{enumerate}
+
+Es decir se genera un proceso con una cierta inercia debido a un contingente histórico donde se ha generado la cuenca descrita en el antártico occidental. En consecuencia se inicia un movimiento de retroalimentación positiva del deshielo que es 
+muy difícil de frenar una vez iniciado. 
+
+\newpage
+
+\subsection{Retroalimentación hielo-albedo y balance energético superficial}
+
+
+\addcontentsline{toc}{chapter}{Bibliografía}
 \printbibliography
 
 \contraportadaA
