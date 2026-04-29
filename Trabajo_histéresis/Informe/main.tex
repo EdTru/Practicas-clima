@@ -280,17 +280,36 @@ muy difícil de frenar una vez iniciado.
 \subsection{Retroalimentación hielo-albedo y balance energético superficial}
 
 Otro principio que afecta severamente al crecimiento o disminución  de las capas del hielo es el efeto el albedo. Estas superficies, prácticamente blancas, reflejan muy bien la radiación incidente, lo que da como resultado 
-que las zonas heladas suelan tener un albedo muy superior al planetario medio (en torno al 0.6-0.9). Bajo este  principio, las zonas de hielo se derriten menos ya que su temperatura nunca llega a ser demasiado alta solo mediante el efecto de la radiación solar.
+que las zonas heladas suelan tener un albedo muy superior al planetario medio ($\alpha \approx 0.6-0.9$). Bajo este  principio, las zonas de hielo se derriten menos ya que su temperatura nunca llega a ser demasiado alta solo mediante el efecto de la radiación solar.
 Este efecto genera un fenómeno de retroalimentación positiva donde las zonas heladas evitan derretirse tan rápidamente por su alto albedo y que por ende se permiten apilarse formando hielo "viejo" que es más estable que las capas nuevas. Por ende aumenta la capa de 
 hielo que se acabará asentando y formando nuevo hieo que evitará aún más el albedo. 
 
 \vspace{0.5cm}
 
-Este efecto no obstante puede ser fácilmente frenado debido al derretimiento de las capas de hielo, ya que si bien el albedo del hielo es extremadamente alto, el del agua que lo rodea es muy bajo (en torno al 0.1). Debido a esto, cuando las capas de hielo se funden 
-permitiendo una mayor masa de agua a su alrededro, esta debido a su bajo albedo, caliente el hielo cercano impidiendo que se formen nuevas capas al derretir las más débiles. En consecuencia esto genera un efecto de retroalimentación negativa donde cuanto más agua 
+Este efecto no obstante puede ser fácilmente frenado debido al derretimiento de las capas de hielo, ya que si bien el albedo del hielo es extremadamente alto, el del agua que lo rodea es muy bajo ($\alpha \approx 0.1$). Debido a esto, cuando las capas de hielo se funden 
+permitiendo una mayor masa de agua a su alrededro, esta debido a su bajo albedo, caliente el hielo cercano impidiendo que se formen nuevas capas al derretir las más débiles. En consecuencia esto genera un efecto de retroalimentación positiva donde cuanto más agua 
 exista al rededor del hielo, mayor cantidad de radiación afectará a las capas derritiéndolas más y evitando la formación de hielo que se derrite dando paso a más agua alrededor de los casquetes de hielo. 
 
 \vspace{0.5cm}
+
+Es interesante también destacar que hay métdoos que nos permiten analizar la ganancia o pérdidia de calor en el sistema a través del balance energético superficial. En este caso se analizará la ecuación del \textit{Balance Energético Superficial (SEB)} que se muestra a continuación:
+
+\begin{equation}
+    SEB = SW_{in} - SW_{out} + LW_{in} - LW_{out} + SHF + LHF
+\end{equation}
+
+Esta ecuación extraída del artículo \cite{vandenBroeke2011} tiene en cuenta la radiación solar entrante ($SW_{in}$) y saliente ($SW_{out}$), la radiación infrarroja entrante ($LW_{in}$) y saliente ($LW_{out}$), el flujo de calor sensible ($SHF$) y el flujo de calor latente ($LHF$).
+El balance energético superficial es un indicador clave para entender la dinámica de las capas de hielo, ya que nos permite cuantificar la cantidad de energía que se gana o se pierde en la superficie del hielo, lo que a su vez afecta directamente a su estabilidad y evolución. A continuación
+mostramos una imagen del propio artículo \cite{vandenBroeke2011} que muestra el balance energético superficial en la capa de hielo de Groenlandia durante varios años. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/seb.png} % Asegúrate de que el nombre sea correcto
+    \caption{Componentes del Balance de Energía Superficial (SEB) en vatios por metro cuadrado ($W m^{-2}$) para diferentes estaciones (S5, S6, S9 y S10). Se observa la dominancia de la radiación neta de onda corta ($SW_{net}$) en la energía disponible para la fusión ($M$). Adaptado de Van den Broeke et al. (2011).}
+    \label{fig:seb_fluxes}
+\end{figure}
+
+\newpage
 
 Vemos pues que el ciclo del hielo debido al albedo se ve muy afectado por efectos previos donde las capas de hielo y el agua a su alrededor se han congelado o derretivo debido a la cantidad de radiación absorbida por el medio completo. En consecuencia por mucho que se altere 
 las variables ambientales alrededor del sistema climático, si alguno de estos dos ciclos de retroalimentación explicados ha sido impulsado por algún efecto en el pasado, es difícilmente frenable a través de estos cambios pues el calor absorbido por el agua de las zonas helados, se debe 
@@ -298,11 +317,70 @@ perder por alguna parte antes de volver a bajar las temperaturas del sistema. Es
 
 
 \addcontentsline{toc}{chapter}{Bibliografía}
+\stepcounter{chapter} % Indica a LaTeX que internamente ya estamos en el Cap 1
+\setcounter{section}{0}
+
 \printbibliography
 
 \addcontentsline{toc}{chapter}{Principios físicos}
+\stepcounter{chapter} % Indica a LaTeX que internamente ya estamos en el Cap 1
+\setcounter{section}{0}
 \chapter*{Principios físicos}
 
+En esta sección se enumeran los diferentes principios físicos mencionados a lo largo del informe y que generan los procesos de retroalimentación que provocan la histéresis de las capas de hielo.
+
+\vspace{0.5cm}
+
+\section{Conservación de la masa y el balance de masas}
+Como se planteó de la retroalimentación Elevación-Balance de Masa (Height-SMB Feedback), el balance de masa neto de las capas de hielo se puede expresar a través de la siguiente ecuación:
+
+\begin{equation}
+    BM = SMB - D
+\end{equation}
+
+Donde $BM$ es el balance de masa neto, $SMB$ es el balance de masa superficial (acumulación menos ablación) y $D$ es la pérdida de masa debido a procesos dinámicos como el flujo de hielo a través de escorrentía o la descarga de icebergs. 
+Este principio es esencial para entender la dinámica de la masa continental de hielo y como las variaciones de esta entre hielo y agua altera el propio sistema climático.
+
+\vspace{0.5cm}
+
+\section{Gradiente térmico adiabático}
+El gradiente térmico adiabático del aire es un principio fundamental para entender la retroalimentación Elevación-Balance de Masa (Height-SMB Feedback). Este establece que la temperatura del aire disminuye con la altitud a una tasa promedio 
+de aproximadamente 6.5ºC por kilómetro. Esto también es influyente en otro tipo de procesos como la formación de nubes o de hielo en la atmósfera. 
+
+\section{Ley de stefan-boltzmann}
+La ley de Stefan-Boltzmann es un principio fundamental en la física del clima que establece que la cantidad de energía radiada por un cuerpo negro es:
+
+\begin{equation}
+    E = \sigma T^4
+\end{equation}
+
+Donde $E$ es la energía radiada, $\sigma$ es la constante de Stefan-Boltzmann y $T$ es la temperatura. Es importante en este sistema ya que al absorber radiación solar esta ley determina la cantidad de
+\textit{$LW_{out}$} es decir la radiación de onda saliente del sistema. Así podiendo hallar la cantidad de energía que el sistema ha absorbido y que el hielo ha usado para cambiar su estructura.
+
+\section{Ley de flujo de Glen}
+Como explicamos en el apartado \textit{1.2.2}, esta ley esta relacionada con la descarga de hielo en el mecanismo del MISI. 
+
+\vspace{0.5cm}
+
+Esta ley describe el comportamiento del hielo como un fluido no newtoniano donde la deformación del mismo se debe al esfuerzo aplicado sobre la propia masa de hielo. En nuestro caso como se explico 
+anteriormente, esta tasa relacionaba el espesor del hielo en la línea de apoyo y el flujo hacia el mar con la ley de potencia:
+\begin{equation}
+    q \propto h^{4.7}
+\end{equation}
+
+\vspace{0.5cm}
+
+\section{Principio de arquímedes y la línea de apoyo}
+
+Este principio determina la flotabilidad del hielo en contacto con el océano. Es el principio físico que define la posición de la línea de apoyo. Cuando el empuje hidrostático del agua marina iguala 
+el peso del hielo, este se desprende del lecho marino y comienza a flotar, iniciando la inestabilidad dinámica en las capas de hielo marinas. Así podemos definir a través de este principio donde inicia 
+la interacción directa entre el hielo y el océano y en consecuencia el donde se encuentra la línea de apoyo de la plataforma helada. 
+
+\vspace{0.5cm}
+
+\section{Conservación de energía y albedo}
+Constituye la base del Balance Energético Superficial (SEB). Establece que la energía neta disponible para la fusión ($M$) es la suma de los flujos radiativos y turbulentos en la interfase aire-hielo. 
+Este equilibrio determina si existe suficiente energía acumulada para iniciar procesos de cambio de fase irreversibles. 
 \contraportadaA
 
 \end{document}
